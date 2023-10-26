@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/s.css" />
+    <style>
+      body {
+        padding: 50px 500px;
+      }
+      .container {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" />
+      <button>ADD</button>
+    </div>
+    <div class="container">
+      <!-- addim 4 elementimi dizayn edirem -->
+      <div class="todoItem">
+        <div class="todoItem_text">Chelsea</div>
+        <button class="todoItem_edit">Edit</button>
+        <button class="todoItem_trash">X</button>
+      </div>
+    </div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const todoInp = document.querySelector(".todoInp");
+      // addim 2 click hadisesi tutmaq
+      btn.addEventListener("click", function (e) {
+        // addim 3 imputun icindeki yazini goturmeliyem
+        const inputText = todoInp.value;
+        // addim 5 html de yaratdigim sablonu js da yaradiram
+        const todoItem = document.createElement("div");
+        const todoItem_text = document.createElement("div");
+        const todoItem_edit = document.createElement("button");
+        const todoItem_trash = document.createElement("button");
+        todoItem_text.textContent = "Chelsea";
+        todoItem_edit.textContent = "Edit";
+        todoItem_trash.textContent = "X";
+
+        todoItem.classList.add("todoItem");
+        todoItem_edit.classList.add("todoItem_edit");
+        todoItem_text.classList.add("todoItem_text");
+        todoItem_trash.classList.add("todoItem_trash");
+
+        todoItem.append(todoItem_text, todoItem_edit, todoItem_trash);
+        container.append(todoItem);
+        
+      });
+    </script>
+  </body>
+</html>
